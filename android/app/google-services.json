@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "812699627485",
+    "project_id": "nallagram-8067a",
+    "storage_bucket": "nallagram-8067a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812699627485:android:e6dceded976ae011f19034",
+        "android_client_info": {
+          "package_name": "com.currently.plusone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812699627485-v35sfc0989i0fiahe09gsf0mt3gmjbui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwApHt9Bwy-LO71XhdXPaKo9M-KYAt_-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812699627485-ikub4n22moot2ol6s9g00uck99ps8rbl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "812699627485-9nme94j60t1gjmltepm0p5fr2gcubgsb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.plus.one"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812699627485:android:cb4a1a1f777acf0ff19034",
+        "android_client_info": {
+          "package_name": "com.plus.one"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812699627485-v35sfc0989i0fiahe09gsf0mt3gmjbui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwApHt9Bwy-LO71XhdXPaKo9M-KYAt_-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812699627485-ikub4n22moot2ol6s9g00uck99ps8rbl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "812699627485-9nme94j60t1gjmltepm0p5fr2gcubgsb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.plus.one"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
