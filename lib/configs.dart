@@ -2,7 +2,7 @@
 const APP_NAME = "Currently";
 
 /// App Icon src
-const APP_ICON = "assets/app_icon.png";
+const APP_ICON = "assets/currently_logo.png";
 
 /// Splash screen image src
 const SPLASH_SCREEN_IMAGE = 'assets/images/splash_image.png';
