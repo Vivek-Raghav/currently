@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../../models/lms/course_orders.dart';
-import '../../../utils/colors.dart';
 import '../../../utils/constants.dart';
 
 class CourseOrderCardComponent extends StatelessWidget {

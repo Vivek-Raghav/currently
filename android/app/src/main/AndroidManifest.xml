@@ -5,7 +5,7 @@
 
     <application
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:label="Currently"
         android:usesCleartextTraffic="true">
 
@@ -55,6 +55,10 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8466012735057920~201612668" />
+            android:value="ca-app-pub-5292422000574799~xxxxxxxxxx "/>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
     </application>
 </manifest>

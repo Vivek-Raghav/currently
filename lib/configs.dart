@@ -12,7 +12,7 @@ const ONESIGNAL_APP_ID = '';
 
 /// Todo: Remove Base URL
 /// NOTE: Do not add slash (/) at the end of your domain.
-const DOMAIN_URL = 'http://13.234.224.69/';
+const DOMAIN_URL = 'http://13.234.224.69/wordpress';
 const BASE_URL = '$DOMAIN_URL/wp-json/';
 
 /// AppStore Url

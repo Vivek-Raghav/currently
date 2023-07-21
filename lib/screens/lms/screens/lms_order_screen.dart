@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:socialv/components/base_scaffold_widget.dart';
-import 'package:socialv/components/loading_widget.dart';
 import 'package:socialv/main.dart';
 import 'package:socialv/models/lms/lms_order_model.dart';
 import 'package:socialv/utils/app_constants.dart';

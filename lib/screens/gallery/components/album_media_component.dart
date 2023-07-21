@@ -8,7 +8,6 @@ import 'package:socialv/screens/post/screens/pdf_screen.dart';
 import 'package:socialv/screens/post/screens/video_post_screen.dart';
 
 import '../../../utils/cached_network_image.dart';
-import '../../../utils/colors.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/images.dart';
 

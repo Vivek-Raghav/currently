@@ -6,9 +6,6 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:socialv/main.dart';
 import 'package:socialv/screens/gallery/components/album_media_component.dart';
 import 'package:socialv/screens/gallery/components/create_album_component.dart';
-import 'package:socialv/screens/post/screens/audio_post_screen.dart';
-import 'package:socialv/screens/post/screens/image_screen.dart';
-import 'package:socialv/screens/post/screens/video_post_screen.dart';
 import 'package:socialv/utils/app_constants.dart';
 
 import '../../../components/loading_widget.dart';
@@ -16,7 +13,6 @@ import '../../../components/no_data_lottie_widget.dart';
 import '../../../models/gallery/album_media_list_model.dart';
 import '../../../models/gallery/albums.dart';
 import '../../../network/rest_apis.dart';
-import '../../post/screens/pdf_screen.dart';
 import 'add_media_screen.dart';
 
 class SingleAlbumDetailScreen extends StatefulWidget {

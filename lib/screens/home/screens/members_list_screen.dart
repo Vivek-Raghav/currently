@@ -3,8 +3,6 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:socialv/main.dart';
 import 'package:socialv/screens/home/components/member_list_component.dart';
 import 'package:socialv/screens/home/components/member_suggestion_list_component.dart';
-import 'package:socialv/screens/settings/screens/coupon_list_screen.dart';
-import 'package:socialv/screens/settings/screens/settings_screen.dart';
 import 'package:socialv/utils/app_constants.dart';
 
 // ignore: must_be_immutable
