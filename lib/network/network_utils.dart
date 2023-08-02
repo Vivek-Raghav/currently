@@ -25,7 +25,7 @@ Map<String, String> buildHeaderTokens({required bool requiredNonce, required boo
   header.putIfAbsent(HttpHeaders.acceptHeader, () => 'application/json; charset=utf-8');
   if (requiredNonce) header.putIfAbsent('Nonce', () => appStore.nonce);
 
-  log(jsonEncode(header));
+  log('header is in buildheader : ${jsonEncode(header)}');
   return header;
 }
 
@@ -105,6 +105,7 @@ Future<Response> buildHttpResponse(
 }) async {
   if (await isNetworkAvailable()) {
     var headers = buildHeaderTokens(requiredNonce: requiredNonce, requiredToken: passToken);
+    print('headers: $headers');
 
     late String url;
     if (endPoint.startsWith("http")) {
@@ -138,6 +139,7 @@ Future<Response> buildHttpResponse(
 
     log('Response ($method): ${response.statusCode} ${response.body}');
 
+
     return response;
   } else {
     throw errorInternetNotAvailable;
@@ -148,6 +150,8 @@ Future handleResponse(Response response, [bool? avoidTokenError]) async {
   if (!await isNetworkAvailable()) {
     throw errorInternetNotAvailable;
   }
+  print('Response status code: ${response.statusCode}');
+
   if (response.statusCode == 401) {
     if (!avoidTokenError.validate()) LiveStream().emit(tokenStream, true);
     throw 'Token Expired';
@@ -158,6 +162,7 @@ Future handleResponse(Response response, [bool? avoidTokenError]) async {
   } else {
     try {
       var body = jsonDecode(response.body);
+      print('Parsed JSON: ${jsonDecode(response.body)}');
       log('body: $body');
       throw body['message'] is String ? parseHtmlString(body['message']) : body['message'];
     } on Exception catch (e) {

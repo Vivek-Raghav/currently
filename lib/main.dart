@@ -6,6 +6,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:socialv/app_theme.dart';
+import 'package:socialv/firebase_options.dart';
 import 'package:socialv/language/app_localizations.dart';
 import 'package:socialv/language/languages.dart';
 import 'package:socialv/models/common_models.dart';
@@ -27,7 +28,7 @@ void main() async {
 
   await initialize(aLocaleLanguageList: languageList());
 
-  Firebase.initializeApp().then((value) {
+  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform).then((value) {
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
     MobileAds.instance.initialize();
   }).catchError((e) {
@@ -37,7 +38,7 @@ void main() async {
   defaultRadius = 32.0;
   defaultAppButtonRadius = 12;
 
-  initializeOneSignal();
+  // initializeOneSignal();
 
   exitFullScreen();
 

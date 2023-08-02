@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
+// import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:socialv/main.dart';
 import 'package:socialv/models/dashboard_api_response.dart';
 import 'package:socialv/models/posts/post_in_list_model.dart';
@@ -72,24 +72,24 @@ class _DashboardScreenState extends State<DashboardScreen> with TickerProviderSt
 
     afterBuildCreated(() {
       if (isMobile) {
-        OneSignal.shared.setNotificationOpenedHandler((OSNotificationOpenedResult notification) async {
-          notification.notification.additionalData!.entries.forEach((element) async {
-            if (element.key == "is_comment") {
-              int postId = notification.notification.additionalData!.entries.firstWhere((element) => element.key == 'post_id').value;
-              if (postId != 0) {
-                CommentScreen(postId: postId).launch(context);
-              }
-            } else if (element.key == 'post_id') {
-              if (element.value.toString().toInt() != 0) {
-                SinglePostScreen(postId: element.value.toString().toInt()).launch(context);
-              }
-            } else if (element.key == 'user_id') {
-              MemberProfileScreen(memberId: element.value).launch(context);
-            } else if (element.key == 'group_id') {
-              GroupDetailScreen(groupId: element.value).launch(context);
-            }
-          });
-        });
+        // OneSignal.shared.setNotificationOpenedHandler((OSNotificationOpenedResult notification) async {
+        //   notification.notification.additionalData!.entries.forEach((element) async {
+        //     if (element.key == "is_comment") {
+        //       int postId = notification.notification.additionalData!.entries.firstWhere((element) => element.key == 'post_id').value;
+        //       if (postId != 0) {
+        //         CommentScreen(postId: postId).launch(context);
+        //       }
+        //     } else if (element.key == 'post_id') {
+        //       if (element.value.toString().toInt() != 0) {
+        //         SinglePostScreen(postId: element.value.toString().toInt()).launch(context);
+        //       }
+        //     } else if (element.key == 'user_id') {
+        //       MemberProfileScreen(memberId: element.value).launch(context);
+        //     } else if (element.key == 'group_id') {
+        //       GroupDetailScreen(groupId: element.value).launch(context);
+        //     }
+        //   });
+        // });
       }
     });
 

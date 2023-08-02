@@ -1,6 +1,6 @@
 name: socialv
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 
 version: 3.0.1
 
@@ -59,7 +59,7 @@ dependencies:
   the_apple_sign_in: ^1.1.1
 
   # Remote Notification
-  onesignal_flutter: ^3.5.1
+  # onesignal_flutter: ^3.5.1
 
   # Story
   story_time: ^1.0.6
@@ -71,6 +71,7 @@ dependencies:
 
   flutter_localizations:
     sdk: flutter
+  path: ^1.8.3
 
 dev_dependencies:
   flutter_test:
@@ -94,4 +95,4 @@ flutter_icons:
   android: "ic_launcher_round"
   ios: true
   remove_alpha_ios: true
-  image_path: 'assets/currently_logo.png'
+  image_path: "assets/currently_logo.png"

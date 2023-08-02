@@ -9,7 +9,7 @@ import 'package:html/parser.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
+// import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:socialv/main.dart';
 import 'package:socialv/models/groups/group_response.dart';
@@ -20,6 +20,7 @@ import 'package:socialv/models/story/common_story_model.dart';
 import 'package:socialv/network/rest_apis.dart';
 
 import 'app_constants.dart';
+import 'package:path/path.dart' as Path;
 
 InputDecoration inputDecoration(
   BuildContext context, {
@@ -292,17 +293,18 @@ Future<List<MediaSourceModel>> getMultipleImages() async {
 
   if (filePickerResult != null) {
     filePickerResult.files.forEach((element) {
-      log('element: ${element.path.validate().split("/").last.split(".").last}');
+      String fileExtension = Path.extension(element.path!).toLowerCase();
+      log('filepath , $fileExtension');
 
-      if (allowedVideoExtensions.any((e) => e == element.path.validate().split("/").last.split(".").last)) {
+      if (allowedVideoExtensions.contains(fileExtension)) {
         mediaType = MediaTypes.video;
       }
 
-      if (element.path.validate().split("/").last.split(".").last.isNotEmpty) {
+      if (fileExtension.isNotEmpty) {
         imgList.add(MediaSourceModel(
           mediaFile: File(element.path!),
           mediaType: mediaType,
-          extension: element.path.validate().split("/").last.split(".").last,
+          extension: fileExtension,
         ));
       } else {
         toast('Cannot add this file');
@@ -416,24 +418,24 @@ String countYears(int difference) {
 }
 
 void initializeOneSignal() async {
-  OneSignal.shared.setAppId(getStringAsync(ONESIGNAL_APP_ID, defaultValue: ONESIGNAL_APP_ID)).then((value) async {
-    OneSignal.shared.setNotificationOpenedHandler((openedResult) {
-      //
-    });
+  // OneSignal.shared.setAppId(getStringAsync(ONESIGNAL_APP_ID, defaultValue: ONESIGNAL_APP_ID)).then((value) async {
+  //   OneSignal.shared.setNotificationOpenedHandler((openedResult) {
+  //     //
+  //   });
 
-    OneSignal.shared.setNotificationWillShowInForegroundHandler((OSNotificationReceivedEvent event) {
-      event.complete(event.notification);
-    });
+  //   OneSignal.shared.setNotificationWillShowInForegroundHandler((OSNotificationReceivedEvent event) {
+  //     event.complete(event.notification);
+  //   });
 
-    OneSignal.shared.consentGranted(true);
-    OneSignal.shared.promptUserForPushNotificationPermission();
+  //   OneSignal.shared.consentGranted(true);
+  //   OneSignal.shared.promptUserForPushNotificationPermission();
 
-    final status = await OneSignal.shared.getDeviceState();
+  //   final status = await OneSignal.shared.getDeviceState();
 
-    log('--------------------------------');
-    log(status?.userId.validate());
-    if (status!.userId.validate().isNotEmpty) setValue(SharePreferencesKey.ONE_SIGNAL_PLAYER_ID, status.userId.validate());
-  });
+  //   log('--------------------------------');
+  //   log(status?.userId.validate());
+  //   if (status!.userId.validate().isNotEmpty) setValue(SharePreferencesKey.ONE_SIGNAL_PLAYER_ID, status.userId.validate());
+  // });
 }
 
 String getPostContent(String? postContent) {

@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>203176417957-1kri6qh2edloe0ffvt1mfb8tv0vjhnsr.apps.googleusercontent.com</string>
+	<string>812699627485-i1gc7re8608ceqrrdvsfuct2flukls7t.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.203176417957-1kri6qh2edloe0ffvt1mfb8tv0vjhnsr</string>
+	<string>com.googleusercontent.apps.812699627485-i1gc7re8608ceqrrdvsfuct2flukls7t</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>812699627485-npbu4v84brti0rmplct6osej0i1ed4ep.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAWCRMufFtzingnw9XX67BQM_OB9v09Wq0</string>
+	<string>AIzaSyBDcc2cZZSkU06y4_nAf1DLnUTPDLKjsEE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>203176417957</string>
+	<string>812699627485</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.iconic.socialv</string>
+	<string>com.currently.plusone</string>
 	<key>PROJECT_ID</key>
-	<string>socialv-flutter</string>
+	<string>nallagram-8067a</string>
 	<key>STORAGE_BUCKET</key>
-	<string>socialv-flutter.appspot.com</string>
+	<string>nallagram-8067a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:203176417957:ios:20f853fd078dd42d49cb4c</string>
+	<string>1:812699627485:ios:cdc61bb9348b60f1f19034</string>
 </dict>
 </plist>

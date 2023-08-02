@@ -98,7 +98,9 @@ Future<LoginResponse> loginUser({required Map request, required bool isSocialLog
   }
 
   appStore.setToken(response.token.validate());
+  print('appStore token after login: ${appStore.token}');
   appStore.setLoggedIn(true);
+  print('appStore isLoggedIn flag after login: ${appStore.isLoggedIn}');
 
   appStore.setLoginName(response.userNicename.validate());
   appStore.setLoginFullName(response.userDisplayName.validate());
