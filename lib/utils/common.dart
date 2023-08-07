@@ -193,6 +193,8 @@ class TabPainter extends BoxPainter {
 }
 
 Future<List<File>> getMultipleFiles({required MediaModel mediaType}) async {
+  print('Allowed types: ${mediaType.allowedType}');
+
   FilePickerResult? filePickerResult;
   List<File> imgList = [];
 
@@ -210,21 +212,40 @@ Future<List<File>> getMultipleFiles({required MediaModel mediaType}) async {
     type = FileType.custom;
   }
 
-  filePickerResult = await FilePicker.platform.pickFiles(allowMultiple: true, type: type, allowedExtensions: type == FileType.custom ? mediaType.allowedType.validate() : null);
+  try {
+    filePickerResult = await FilePicker.platform.pickFiles(
+        allowMultiple: true,
+        type: type,
+        allowedExtensions: type == FileType.custom
+            ? mediaType.allowedType!.map((e) => e.toLowerCase()).toList()
+            : null,
+    );
+} catch (e) {
+    print('Error picking files: $e');
+    toast('Error picking files. Please try again.');
+    return imgList; // return an empty list or handle as appropriate
+}
+
 
   if (filePickerResult != null) {
-    filePickerResult.files.forEach((element) {
-      log('element: ${element.path.validate().split("/").last.split(".").last}');
+    List<File> files = filePickerResult.paths.map((path) => File(path!)).toList();
+    print('check list of files : ${files.first.path} ${files.length}');
 
-      if (element.path.validate().split("/").last.split(".").last.isNotEmpty && mediaType.allowedType!.any((e) => e == element.path.validate().split("/").last.split(".").last)) {
+    for (var element in filePickerResult.files) {
+      String extension = element.path.validate().split("/").last.split(".").last.toLowerCase();
+      log('element: $extension');
+      log('path ${element.path}');
+
+      if (extension.isNotEmpty && mediaType.allowedType!.map((e) => e.toLowerCase()).contains(extension)) {
         imgList.add(File(element.path!));
       } else {
         toast(language.cannotAddThisFile);
       }
-    });
+    }
   }
   return imgList;
 }
+
 
 String getFileExtension(String fileName) {
   try {

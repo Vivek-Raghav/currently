@@ -89,6 +89,9 @@ class _AddPostScreenState extends State<AddPostScreen> {
     appStore.setLoading(true);
     await getMediaTypes(type: widget.component.validate()).then((value) {
       mediaTypeList.addAll(value);
+       mediaTypeList.forEach((media) {
+    print("Type: ${media.type}, Allowed Types: ${media.allowedType}");
+  });
 
       appStore.setLoading(false);
     }).catchError((e) {

@@ -3,7 +3,8 @@ import 'package:socialv/models/story/highlight_stories_model.dart';
 class MemberDetailModel {
   String? email;
   int? friendsCount;
-  String? friendshipStatus;
+  // String? friendshipStatus;
+  bool? friendshipStatus;
   int? groupsCount;
   String? id;
   String? memberAvatarImage;
@@ -37,13 +38,15 @@ class MemberDetailModel {
       this.highlightStory});
 
   factory MemberDetailModel.fromJson(Map<String, dynamic> json) {
+    print('status : ${json['friendship_status']}');
     return MemberDetailModel(
       email: json['email'],
       friendsCount: json['friends_count'],
       friendshipStatus: json['friendship_status'],
       groupsCount: json['groups_count'],
       id: json['id'],
-      memberAvatarImage: json['member_avtar_image'],
+
+      memberAvatarImage:  json['member_avtar_image']==false ? 'https://i.imgur.com/4AmHKYE.jpg' : json['member_avtar_image'],
       memberCoverImage: json['member_cover_image'],
       mentionName: json['mention_name'],
       name: json['name'],

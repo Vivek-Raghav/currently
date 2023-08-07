@@ -342,7 +342,7 @@ class _MemberProfileScreenState extends State<MemberProfileScreen> {
                             userMentionName: member.mentionName.validate(),
                             userName: member.name.validate(),
                             memberId: member.id.validate().toInt(),
-                            friendshipStatus: member.friendshipStatus.validate(),
+                            friendshipStatus: 'is_friend',
                             callback: () {
                               isCallback = true;
                               future = getPostList();
